@@ -195,7 +195,6 @@ public class Ordena {
         // Ubicar cada elemento en un bucket
         for (int i = 0; i < n; i++) {
             int bi = (temp[i] - minVal) / m;
-            //System.out.println(buckets.size()+" n: "+n+" bi: "+bi);
             if(bi==buckets.size()){
                 bi--;
             }
@@ -207,7 +206,6 @@ public class Ordena {
         for (int bi = 0, j=0; bi < cantBuckets; bi++) {
             List<Integer> bucket = buckets.get(bi);
             if (bucket != null) {
-                //Collections.sort(bucket);
                 Object[] lista = bucket.toArray();
                 int[] listaInt = Arrays.stream(lista).mapToInt(o -> (int)o).toArray();
                 if(listaInt.length>1){
@@ -236,10 +234,8 @@ public class Ordena {
         return temp;
     } 
     
-    public static void main(String[] args) {
-        
-        int[] arr = {14,30,55,83,24,52,11,46};// 5 3 10 11 24 52 11
-        
+    /*public static void main(String[] args) {        
+        int[] arr = {14,30,55,83,24,52,11,46};// 5 3 10 11 24 52 11        
         bucketsort(arr);
         int[] arr2 =arregloSuma(arr);
         for (int i = 0; i < arr.length; i++) {
@@ -249,5 +245,5 @@ public class Ordena {
         for (int i = 0; i < arr2.length; i++) {
             System.out.print(arr2[i]+" ");
         }
-    }
+    }*/
 }
